@@ -4,12 +4,12 @@ Delete Hidden Posts
 -----------
 Description
 -----------
-This is a plugin for **Question2Answer** that deletes all hidden posts
+This is a plugin for **Question2Answer** that deletes all hidden posts having dependencies 
 
 --------
 Features
 --------
-- ability to delete all the hidden posts from q2a database 
+- ability to delete all the hidden posts from q2a database having dependencies 
 - when a question is deleted all its answers , comments gets deleted 
 - when a answer is deleted all its comments and related questions gets deleted 
 - buttons are displayed *after* a question's response buttons - which helps to delete the question right away 
