@@ -9,12 +9,11 @@ This is a plugin for **Question2Answer** that deletes all hidden posts
 --------
 Features
 --------
-- currently supports five services: Facebook, Google+, Twitter, LinkedIn and Email
-- toggle each button individually via admin interface
-- set button order using weight
-- buttons are displayed *after* a question's response buttons - see below to change this
-- option to include suggestion text when there is no answer
-- optional share widget for sidebar
+- ability to delete all the hidden posts from q2a database 
+- when a question is deleted all its answers , comments gets deleted 
+- when a answer is deleted all its comments and related questions gets deleted 
+- buttons are displayed *after* a question's response buttons - which helps to delete the question right away 
+- every options can be configured from admin panel 
 
 ------------
 Installation
@@ -23,18 +22,16 @@ Installation
 #. Get the source code for this plugin from github_, either using git_, or downloading directly:
 
    - To download using git, install git and then type 
-     ``git clone git://github.com/NoahY/q2a-share.git share``
+     ``git clone git://github.com/amiyasahu/q2a-delete-hidden-posts.git share``
      at the command prompt (on Linux, Windows is a bit different)
    - To download directly, go to the `project page`_ and click **Download**
 
-#. navigate to your site, go to **Admin -> Plugins** on your q2a install and select which buttons to show, then click **Save**.
-#. To change the position of the buttons, edit qa-share-layer.php and follow standard theming practices, as outlined here_
+#. navigate to your site, go to **Admin -> Plugins** on your q2a install and select the options you need, then click **Save**.
 
 .. _Question2Answer: http://www.question2answer.org/install.php
 .. _git: http://git-scm.com/
-.. _github:
-.. _project page: https://github.com/NoahY/q2a-share
-.. _here: http://www.question2answer.org/layers.php
+.. _github: https://github.com/amiyasahu/q2a-delete-hidden-posts
+.. _project page: https://github.com/amiyasahu/q2a-delete-hidden-posts
 
 ----------
 Disclaimer

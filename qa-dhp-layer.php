@@ -9,13 +9,10 @@
 	require_once QA_INCLUDE_DIR.'qa-app-users.php';
 
 	class qa_html_theme_layer extends qa_html_theme_base {
-
-		private $extradata;
-		private $pluginurl;
 		
 		function head_css() {
 			qa_html_theme_base::head_css();
-			$this->output('<link rel="stylesheet" href="'.qa_opt('site_url').'qa-plugin/'.DHP_DIR_NAME.'/styles.css">');
+			$this->output('<link rel="stylesheet" href="'.qa_opt('site_url').'qa-plugin/'.AMI_DHP_DIR_NAME.'/styles.css">');
 		}
 
 		function q_view_buttons($q_view) {
