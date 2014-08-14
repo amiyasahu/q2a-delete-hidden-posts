@@ -26,16 +26,23 @@ if (!function_exists('ami_dhp_delete_hidden_posts_process')) {
 			global $deleted ; 
 
 			// first delete all hidden posts 
-			foreach ($hiddencomments as $hiddencomment) {
-					ami_dhp_post_delete_recursive($hiddencomment['opostid']);
+			if (count($hiddencomments)) {
+				foreach ($hiddencomments as $hiddencomment) {
+						ami_dhp_post_delete_recursive($hiddencomment['opostid']);
+				}
 			}
+			
 			// delete all the hidden answers 
-			foreach ($hiddenanswers as $hiddenanswer) {
-					ami_dhp_post_delete_recursive($hiddenanswer['opostid']);
+			if (count($hiddenanswers)) {
+				foreach ($hiddenanswers as $hiddenanswer) {
+						ami_dhp_post_delete_recursive($hiddenanswer['opostid']);
+				}
 			}
 			// delete all the hidden questions 
-			foreach ($hiddenquestions as $hiddenquestion) {
-					ami_dhp_post_delete_recursive($hiddenquestion['postid']);
+			if (count($hiddenquestions)) {
+				foreach ($hiddenquestions as $hiddenquestion) {
+						ami_dhp_post_delete_recursive($hiddenquestion['postid']);
+				}
 			}
 		}
 	}

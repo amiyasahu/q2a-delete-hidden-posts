@@ -7,7 +7,7 @@
 		const DELETE_A_BTN            = 'ami_dhp_delete_a_button' ;
 		const PLUGIN_ENABLED          = 'ami_dhp_enabled' ;
 		const ENABLE_DELETE_BTN       = 'ami_dhp_enable_delete_btn' ;
-		const SAME_USER_CAN_DELETE_QA  = 'ami_dhp_smusr_can_dlt' ;
+		const SAME_USER_CAN_DELETE_QA = 'ami_dhp_smusr_can_dlt' ;
 		const MIN_LEVEL_TO_DELETE_Q   = 'ami_dhp_min_level_to_delete' ;
 
 		function option_default($option) {
