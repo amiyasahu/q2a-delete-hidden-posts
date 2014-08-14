@@ -11,7 +11,18 @@
 		const MIN_LEVEL_TO_DELETE_Q   = 'ami_dhp_min_level_to_delete' ;
 
 		function option_default($option) {
-			return ;
+			switch ($option) {
+				case self::PLUGIN_ENABLED :
+				case self::SAME_USER_CAN_DELETE_QA :
+					return 1;
+					break;
+				case self::MIN_LEVEL_TO_DELETE_Q :
+					return QA_USER_LEVEL_ADMIN ;
+					break;
+				default:
+					return null;
+					break;
+			}
 		}
 
 		function admin_form(&$qa_content)
