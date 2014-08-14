@@ -23,7 +23,7 @@ if (!function_exists('ami_dhp_delete_hidden_posts_process')) {
 				qa_db_recent_c_qs_selectspec($userid, 0, null, null, 'C_HIDDEN', true)
 			);
 
-			global $deleted ; 
+			global $ami_dhp_posts_deleted ; 
 
 			// first delete all hidden posts 
 			if (count($hiddencomments)) {
@@ -56,13 +56,13 @@ if (!function_exists('ami_dhp_post_delete_recursive')) {
 				require_once QA_INCLUDE_DIR.'qa-app-format.php';
 				require_once QA_INCLUDE_DIR.'qa-app-posts.php';
 
-				global $deleted ; 
+				global $ami_dhp_posts_deleted ; 
 
-				if (is_null($deleted)) {
-					$deleted = array() ;
+				if (is_null($ami_dhp_posts_deleted)) {
+					$ami_dhp_posts_deleted = array() ;
 				}
 
-				if (in_array($postid, $deleted)){
+				if (in_array($postid, $ami_dhp_posts_deleted)){
 					return;
 				}
 
@@ -90,9 +90,9 @@ if (!function_exists('ami_dhp_post_delete_recursive')) {
 								ami_dhp_post_delete_recursive($commentsfollow['postid']);
 							}
 						}
-						if (!in_array($oldpost['postid'], $deleted)){
+						if (!in_array($oldpost['postid'], $ami_dhp_posts_deleted)){
 							qa_question_delete($oldpost, null, null, null, $closepost);
-							$deleted[] = $oldpost['postid'] ;
+							$ami_dhp_posts_deleted[] = $oldpost['postid'] ;
 						}
 						break;
 						
@@ -105,18 +105,18 @@ if (!function_exists('ami_dhp_post_delete_recursive')) {
 								ami_dhp_post_delete_recursive($commentsfollow['postid']);
 							}
 						}
-						if (!in_array($oldpost['postid'], $deleted)){
+						if (!in_array($oldpost['postid'], $ami_dhp_posts_deleted)){
 							qa_answer_delete($oldpost, $question, null, null, null);
-							$deleted[] = $oldpost['postid'] ;
+							$ami_dhp_posts_deleted[] = $oldpost['postid'] ;
 						}
 						break;
 						
 					case 'C':
 						$parent=qa_post_get_full($oldpost['parentid'], 'QA');
 						$question=qa_post_parent_to_question($parent);
-						if (!in_array($oldpost['postid'], $deleted)){
+						if (!in_array($oldpost['postid'], $ami_dhp_posts_deleted)){
 							qa_comment_delete($oldpost, $question, $parent, null, null, null);
-							$deleted[] = $oldpost['postid'] ;
+							$ami_dhp_posts_deleted[] = $oldpost['postid'] ;
 						}
 						break;
 				}

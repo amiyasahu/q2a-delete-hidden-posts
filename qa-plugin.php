@@ -18,8 +18,9 @@
         	header('Location: ../../');
         	exit;
         }
+        
         /*global variable declaration */
-        $deleted = array() ;
+        $ami_dhp_posts_deleted = array() ;
 
         if (!defined('AMI_DHP_DIR')) {
                 define('AMI_DHP_DIR', dirname(__FILE__));
