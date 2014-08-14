@@ -1,4 +1,9 @@
 <?php
+if (!defined('QA_VERSION')) { // don't allow this page to be requested directly from browser
+		header('Location: ../../');
+		exit;
+}
+
 if (!function_exists('ami_dhp_delete_hidden_posts_process')) {		
 		function ami_dhp_delete_hidden_posts_process()
 		{
