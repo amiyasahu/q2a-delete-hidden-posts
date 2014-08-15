@@ -13,7 +13,7 @@ return array(
 	'same_user_can_delete'      => 'Allow users to delete their own question/answer' ,
 	'choose_who_can_delete_all' => 'Minimum Level users who can delete the questions' ,
 	'delete_hidden_posts'       => 'Delete Hidden Posts' ,
-	'delete_q'                  => 'Delete the Questions' ,
+	'delete_q'                  => 'Delete the Question' ,
 	'delete_a'                  => 'Delete the Answer' ,
 );
 
