@@ -132,27 +132,25 @@ if (!function_exists('ami_dhp_post_delete_recursive')) {
 if (!function_exists('ami_dhp_add_q_delete_button')) {
 	function ami_dhp_add_q_delete_button( &$buttons , $post )
 	{
-		if (!qa_opt(qa_dhp_admin::PLUGIN_ENABLED)) {
+		if (!qa_opt(qa_dhp_admin::PLUGIN_ENABLED) || !(ami_dhp_is_user_eligible_to_delete(qa_get_logged_in_userid() , @$post['userid']))) {
 			// if the feature is not enabled from the admin panel , then return a falsy value , do not process anything 
 			return false;
 		}
-		
-		if (qa_clicked(qa_dhp_admin::DELETE_Q_BTN)) {
-			if (ami_dhp_is_user_eligible_to_delete(qa_get_logged_in_userid() , @$post['userid'])) { // already checked 'permit_post_q'
+
+		$prefix='q'.$post['postid'].'_';
+		if (qa_clicked($prefix.qa_dhp_admin::DELETE_Q_BTN)) {
 				ami_dhp_post_delete_recursive($post['postid']);
 				header('Location: ../../');
-        		exit;
-			} 
-		}
+				exit ;
 
-		if (ami_dhp_is_user_eligible_to_delete(qa_get_logged_in_userid() , @$post['userid'])) {
+		}else {
 				// add the anonymous buton
 				$buttons[qa_dhp_admin::DELETE_Q_BTN]=array(
-						'tags' => 'name="'.qa_dhp_admin::DELETE_Q_BTN.'"',
+						'tags' => 'name="'.$prefix.qa_dhp_admin::DELETE_Q_BTN.'"',
 						'label' => qa_lang('ami_dhp/delete_q'),
 						'popup' => qa_lang('ami_dhp/delete_q'),
 					);
-			}
+		}
 	}
 }
 
@@ -160,33 +158,57 @@ if (!function_exists('ami_dhp_add_a_delete_button')) {
 	function ami_dhp_add_a_delete_button( &$buttons , $post )
 	{
 
-		if (!qa_opt(qa_dhp_admin::PLUGIN_ENABLED)) {
+		if (!qa_opt(qa_dhp_admin::PLUGIN_ENABLED) || !(ami_dhp_is_user_eligible_to_delete(qa_get_logged_in_userid() , @$post['userid']))) {
 			// if the feature is not enabled from the admin panel , then return a falsy value , do not process anything 
 			return false;
 		}
-		
-		if (qa_clicked(qa_dhp_admin::DELETE_A_BTN)) {
-			if (ami_dhp_is_user_eligible_to_delete(qa_get_logged_in_userid() , @$post['userid'])) { // already checked 'permit_post_q'
+
+		$prefix='a'.$post['postid'].'_'; 
+
+		if (qa_clicked($prefix.qa_dhp_admin::DELETE_A_BTN)) {
 				ami_dhp_post_delete_recursive($post['postid']);
 				qa_redirect(qa_self_html());
 				exit ;
-			} 
-		}
-
-		if (ami_dhp_is_user_eligible_to_delete(qa_get_logged_in_userid() , @$post['userid'])) {
+		}else {
 				// add the anonymous buton
 				$buttons[qa_dhp_admin::DELETE_A_BTN]=array(
-						'tags' => 'name="'.qa_dhp_admin::DELETE_A_BTN.'"',
+						'tags' => 'name="'.$prefix.qa_dhp_admin::DELETE_A_BTN.'"',
 						'label' => qa_lang('ami_dhp/delete_a'),
 						'popup' => qa_lang('ami_dhp/delete_a'),
 					);
-			}
+		}
+	}
+}
+
+if (!function_exists('ami_dhp_add_c_delete_button')) {
+	function ami_dhp_add_c_delete_button( &$buttons , $post )
+	{
+
+		if (!qa_opt(qa_dhp_admin::PLUGIN_ENABLED) || !(ami_dhp_is_user_eligible_to_delete(qa_get_logged_in_userid() , @$post['userid']))) {
+			// if the feature is not enabled from the admin panel , then return a falsy value , do not process anything 
+			return false;
+		}
+
+		$prefix='c'.$post['postid'].'_'; 
+
+		if (qa_clicked($prefix.qa_dhp_admin::DELETE_C_BTN)) {
+				ami_dhp_post_delete_recursive($post['postid']);
+				qa_redirect(qa_self_html());
+				exit ;
+		} else {
+				// add the anonymous buton
+				$buttons[qa_dhp_admin::DELETE_C_BTN]=array(
+						'tags' => 'name="'.$prefix.qa_dhp_admin::DELETE_C_BTN.'"',
+						'label' => qa_lang('ami_dhp/delete_c'),
+						'popup' => qa_lang('ami_dhp/delete_c'),
+					);
+		}
 	}
 }
 
 
 if (!function_exists('ami_dhp_is_user_eligible_to_delete')) {
-	function ami_dhp_is_user_eligible_to_delete($userid = null , $q_userid = null )		
+	function ami_dhp_is_user_eligible_to_delete($userid = null , $post_userid = null )		
 	{
 		// if the plugin is not enabled first reuturn false 
 		if (!qa_opt(qa_dhp_admin::PLUGIN_ENABLED)) {
@@ -208,7 +230,7 @@ if (!function_exists('ami_dhp_is_user_eligible_to_delete')) {
 			return true;
 		}
 
-		if (qa_opt(qa_dhp_admin::SAME_USER_CAN_DELETE_QA) && !is_null($q_userid) && ((int)$userid == (int)$q_userid)) {
+		if (qa_opt(qa_dhp_admin::SAME_USER_CAN_DELETE_QA) && !is_null($post_userid) && ((int)$userid == (int)$post_userid)) {
 			return true;
 		}
 		

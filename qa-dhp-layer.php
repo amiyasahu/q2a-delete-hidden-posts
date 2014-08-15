@@ -30,6 +30,15 @@
 			
 			qa_html_theme_base::a_item_buttons($a_item);
 		}
+
+		function c_item_buttons($c_item){
+			if (isset($c_item['form']['buttons']) && count($c_item['form']['buttons'])) {
+				ami_dhp_add_c_delete_button($c_item['form']['buttons'] , $c_item['raw']) ; 
+			}
+			
+			qa_html_theme_base::c_item_buttons($c_item);
+		}
+
 		
 	}
 	/*
