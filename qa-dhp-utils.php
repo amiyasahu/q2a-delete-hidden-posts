@@ -136,7 +136,7 @@ if (!function_exists('ami_dhp_add_q_delete_button')) {
 			// if the feature is not enabled from the admin panel , then return a falsy value , do not process anything 
 			return false;
 		}
-		cbu_log($buttons);
+		
 		$prefix='q'.$post['postid'].'_';
 		if (qa_clicked($prefix.qa_dhp_admin::DELETE_Q_BTN)) {
 				ami_dhp_post_delete_recursive($post['postid']);
