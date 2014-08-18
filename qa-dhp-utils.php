@@ -132,11 +132,11 @@ if (!function_exists('ami_dhp_post_delete_recursive')) {
 if (!function_exists('ami_dhp_add_q_delete_button')) {
 	function ami_dhp_add_q_delete_button( &$buttons , $post )
 	{
-		if (!qa_opt(qa_dhp_admin::PLUGIN_ENABLED) || !(ami_dhp_is_user_eligible_to_delete(qa_get_logged_in_userid() , @$post['userid']))) {
+		if (!qa_opt(qa_dhp_admin::PLUGIN_ENABLED) || !(ami_dhp_is_user_eligible_to_delete(qa_get_logged_in_userid() , @$post['userid'])) || isset($buttons['delete']) ) {
 			// if the feature is not enabled from the admin panel , then return a falsy value , do not process anything 
 			return false;
 		}
-
+		cbu_log($buttons);
 		$prefix='q'.$post['postid'].'_';
 		if (qa_clicked($prefix.qa_dhp_admin::DELETE_Q_BTN)) {
 				ami_dhp_post_delete_recursive($post['postid']);
@@ -148,7 +148,7 @@ if (!function_exists('ami_dhp_add_q_delete_button')) {
 				$buttons[qa_dhp_admin::DELETE_Q_BTN]=array(
 						'tags' => 'name="'.$prefix.qa_dhp_admin::DELETE_Q_BTN.'"',
 						'label' => qa_lang('ami_dhp/delete_q'),
-						'popup' => qa_lang('ami_dhp/delete_q'),
+						'popup' => qa_lang('question/delete_q_popup'),
 					);
 		}
 	}
@@ -158,7 +158,7 @@ if (!function_exists('ami_dhp_add_a_delete_button')) {
 	function ami_dhp_add_a_delete_button( &$buttons , $post )
 	{
 
-		if (!qa_opt(qa_dhp_admin::PLUGIN_ENABLED) || !(ami_dhp_is_user_eligible_to_delete(qa_get_logged_in_userid() , @$post['userid']))) {
+		if (!qa_opt(qa_dhp_admin::PLUGIN_ENABLED) || !(ami_dhp_is_user_eligible_to_delete(qa_get_logged_in_userid() , @$post['userid'])) || isset($buttons['delete']) ) {
 			// if the feature is not enabled from the admin panel , then return a falsy value , do not process anything 
 			return false;
 		}
@@ -174,7 +174,7 @@ if (!function_exists('ami_dhp_add_a_delete_button')) {
 				$buttons[qa_dhp_admin::DELETE_A_BTN]=array(
 						'tags' => 'name="'.$prefix.qa_dhp_admin::DELETE_A_BTN.'"',
 						'label' => qa_lang('ami_dhp/delete_a'),
-						'popup' => qa_lang('ami_dhp/delete_a'),
+						'popup' => qa_lang('question/delete_a_popup'),
 					);
 		}
 	}
@@ -184,7 +184,7 @@ if (!function_exists('ami_dhp_add_c_delete_button')) {
 	function ami_dhp_add_c_delete_button( &$buttons , $post )
 	{
 
-		if (!qa_opt(qa_dhp_admin::PLUGIN_ENABLED) || !(ami_dhp_is_user_eligible_to_delete(qa_get_logged_in_userid() , @$post['userid']))) {
+		if (!qa_opt(qa_dhp_admin::PLUGIN_ENABLED) || !(ami_dhp_is_user_eligible_to_delete(qa_get_logged_in_userid() , @$post['userid'])) || isset($buttons['delete']) ) {
 			// if the feature is not enabled from the admin panel , then return a falsy value , do not process anything 
 			return false;
 		}
@@ -200,7 +200,7 @@ if (!function_exists('ami_dhp_add_c_delete_button')) {
 				$buttons[qa_dhp_admin::DELETE_C_BTN]=array(
 						'tags' => 'name="'.$prefix.qa_dhp_admin::DELETE_C_BTN.'"',
 						'label' => qa_lang('ami_dhp/delete_c'),
-						'popup' => qa_lang('ami_dhp/delete_c'),
+						'popup' => qa_lang('question/delete_c_popup'),
 					);
 		}
 	}
