@@ -144,7 +144,7 @@ if (!function_exists('ami_dhp_add_q_delete_button')) {
 				exit ;
 
 		}else {
-				// add the anonymous buton
+				// add the delete buton
 				$buttons[qa_dhp_admin::DELETE_Q_BTN]=array(
 						'tags' => 'name="'.$prefix.qa_dhp_admin::DELETE_Q_BTN.'"',
 						'label' => qa_lang('ami_dhp/delete_q'),
