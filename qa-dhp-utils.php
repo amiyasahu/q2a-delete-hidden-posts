@@ -159,7 +159,7 @@
             } else {
                 // add the delete buton
                 $buttons[ qa_dhp_admin::DELETE_Q_BTN ] = array(
-                    'tags'  => 'name="' . $prefix . qa_dhp_admin::DELETE_Q_BTN . '" class="qa-form-light-button qa-form-light-button-delete"',
+                    'tags'  => 'name="' . $prefix . qa_dhp_admin::DELETE_Q_BTN . '" class="qa-form-light-button qa-form-light-button-delete" onclick="dhp_ask_user_confirmation(event);"',
                     'label' => dhp_lang('delete_q'),
                     'popup' => qa_lang('question/delete_q_popup'),
                 );
@@ -191,7 +191,7 @@
             } else {
                 // add the anonymous buton
                 $buttons[ qa_dhp_admin::DELETE_A_BTN ] = array(
-                    'tags'  => 'name="' . $prefix . qa_dhp_admin::DELETE_A_BTN . '" class="qa-form-light-button qa-form-light-button-delete"',
+                    'tags'  => 'name="' . $prefix . qa_dhp_admin::DELETE_A_BTN . '" class="qa-form-light-button qa-form-light-button-delete" onclick="dhp_ask_user_confirmation(event);"',
                     'label' => dhp_lang('delete_a'),
                     'popup' => qa_lang('question/delete_a_popup'),
                 );
@@ -223,7 +223,7 @@
             } else {
                 // add the anonymous buton
                 $buttons[ qa_dhp_admin::DELETE_C_BTN ] = array(
-                    'tags'  => 'name="' . $prefix . qa_dhp_admin::DELETE_C_BTN . '" class="qa-form-light-button qa-form-light-button-delete"',
+                    'tags'  => 'name="' . $prefix . qa_dhp_admin::DELETE_C_BTN . '" class="qa-form-light-button qa-form-light-button-delete" onclick="dhp_ask_user_confirmation(event);"',
                     'label' => dhp_lang('delete_c'),
                     'popup' => qa_lang('question/delete_c_popup'),
                 );

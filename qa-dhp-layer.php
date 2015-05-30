@@ -4,18 +4,8 @@
         exit;
     }
 
-    require_once QA_INCLUDE_DIR . 'qa-theme-base.php';
-    require_once QA_INCLUDE_DIR . 'qa-app-blobs.php';
-    require_once QA_INCLUDE_DIR . 'qa-app-users.php';
-
     class qa_html_theme_layer extends qa_html_theme_base
     {
-
-        function head_css()
-        {
-            qa_html_theme_base::head_css();
-            $this->output('<link rel="stylesheet" href="' . qa_opt('site_url') . 'qa-plugin/' . AMI_DHP_DIR_NAME . '/styles.css">');
-        }
 
         function q_view_buttons($q_view)
         {
@@ -44,6 +34,21 @@
             qa_html_theme_base::c_item_buttons($c_item);
         }
 
+        function head_script(){
+            parent::head_script();
+            $this->output('<script>');
+            $this->output('function dhp_ask_user_confirmation(event){');
+                $this->output('if(!confirm("'.dhp_lang('are_you_sure').'")) {');
+                $this->output('event.preventDefault();');
+                    $this->output('return false ;');
+                $this->output('}');
+                $this->output('else {');
+                    $this->output('return true ;');
+                $this->output('}');
+            $this->output('}');
+            $this->output('</script>');
+            $this->output();
+        }
 
     }
     /*
