@@ -159,7 +159,7 @@
             } else {
                 // add the delete buton
                 $buttons[ qa_dhp_admin::DELETE_Q_BTN ] = array(
-                    'tags'  => 'name="' . $prefix . qa_dhp_admin::DELETE_Q_BTN . '"',
+                    'tags'  => 'name="' . $prefix . qa_dhp_admin::DELETE_Q_BTN . '" class="qa-form-light-button qa-form-light-button-delete"',
                     'label' => dhp_lang('delete_q'),
                     'popup' => qa_lang('question/delete_q_popup'),
                 );

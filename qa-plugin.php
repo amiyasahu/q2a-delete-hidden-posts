@@ -6,7 +6,7 @@
             Plugin Update Check URI: https://raw.github.com/amiyasahu/q2a-delete-hidden-posts/master/qa-plugin.php
             Plugin Description: To All Delete Hidden Posts with dependencies
             Plugin Version: 1.1
-            Plugin Date: 2014-08-11
+            Plugin Date: 2015-05-30
             Plugin Author: Amiya Sahu
             Plugin Author URI: http://amiyasahu.com
             Plugin License: GPLv2
