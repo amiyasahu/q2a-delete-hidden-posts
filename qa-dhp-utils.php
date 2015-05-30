@@ -153,7 +153,7 @@
             $prefix = 'q' . $post['postid'] . '_';
             if (qa_clicked($prefix . qa_dhp_admin::DELETE_Q_BTN)) {
                 ami_dhp_post_delete_recursive($post['postid']);
-                header('Location: ../../');
+                qa_redirect(qa_path_to_root());
                 exit;
 
             } else {
@@ -186,7 +186,7 @@
 
             if (qa_clicked($prefix . qa_dhp_admin::DELETE_A_BTN)) {
                 ami_dhp_post_delete_recursive($post['postid']);
-                qa_redirect(qa_self_html());
+                qa_redirect(qa_request());
                 exit;
             } else {
                 // add the anonymous buton
@@ -218,7 +218,7 @@
 
             if (qa_clicked($prefix . qa_dhp_admin::DELETE_C_BTN)) {
                 ami_dhp_post_delete_recursive($post['postid']);
-                qa_redirect(qa_self_html());
+                qa_redirect(qa_request());
                 exit;
             } else {
                 // add the anonymous buton
