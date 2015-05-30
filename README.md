@@ -19,8 +19,9 @@ Features
 Version History
 -----------
 - 1.1
-    * added ask user confirmation while deleting a post
-    * removed css styling , only handling with q2a provided classes 
+    * added ask user confirmation while deleting a question / answer / comment
+    * added ask admin confirmation while deleting all hidden posts
+    * removed css styling , only handling with q2a provided classes
     * improved redirect logic 
     * improved code 
 - 1.0
