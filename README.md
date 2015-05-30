@@ -18,13 +18,13 @@ Features
 -----------
 Version History
 -----------
--1.1
-    *added ask user confirmation while deleting a post
-    *removed css styling , only handling with q2a provided classes 
-    *improved redirect logic 
-    *improved code 
--1.0
-    *Initial stable release 
+- 1.1
+    * added ask user confirmation while deleting a post
+    * removed css styling , only handling with q2a provided classes 
+    * improved redirect logic 
+    * improved code 
+- 1.0
+    * Initial stable release 
 ----------
 Disclaimer
 ----------
