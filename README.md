@@ -15,6 +15,17 @@ Features
 - buttons are displayed *after* a question's response buttons - which helps to delete the question right away 
 - every options can be configured from admin panel 
 
+-----------
+Version History
+-----------
+- 1.1
+    * added ask user confirmation while deleting a post
+    * removed css styling , only handling with q2a provided classes 
+    * improved redirect logic 
+    * improved code 
+- 1.0
+    * initial stable release 
+
 ----------
 Disclaimer
 ----------
