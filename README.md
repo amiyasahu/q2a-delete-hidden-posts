@@ -24,7 +24,8 @@ Version History
     * improved redirect logic 
     * improved code 
 - 1.0
-    * Initial stable release 
+    * initial stable release 
+
 ----------
 Disclaimer
 ----------
