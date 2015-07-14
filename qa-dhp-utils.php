@@ -153,7 +153,7 @@
             $prefix = 'q' . $post['postid'] . '_';
             if (qa_clicked($prefix . qa_dhp_admin::DELETE_Q_BTN)) {
                 ami_dhp_post_delete_recursive($post['postid']);
-                qa_redirect(qa_path_to_root());
+                qa_redirect(''); // redirect since question has gone
                 exit;
 
             } else {
