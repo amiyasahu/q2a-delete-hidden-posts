@@ -1,7 +1,7 @@
 =============================
 Delete Hidden Posts
 =============================
------------
+
 Description
 -----------
 This is a plugin for **Question2Answer** websites that deletes all hidden posts with/with-out having children posts  
@@ -12,7 +12,6 @@ This plugin adds a delete button right after the question / answer / comment (ca
 
 Also if your website has many hidden posts which have many child posts this plugin can delete them with one click effort .
 
---------
 Features
 --------
 - ability to delete all the hidden posts from q2a database having dependencies 
@@ -21,7 +20,6 @@ Features
 - buttons are displayed *after* a question's or answer's or comemnt's response buttons - which helps to delete the post right away 
 - every options can be configured from admin panel 
 
------------
 Version History
 -----------
 - 1.1
@@ -33,12 +31,10 @@ Version History
 - 1.0
     * initial stable release 
 
-----------
 Disclaimer
 ----------
 This is **beta** code.  It is probably okay for production environments, but may not work exactly as expected.  Refunds will not be given.  If it breaks, you get to keep both parts.
 
----------
 About Question2Answer
 ---------
 Question2Answer is a free and open source platform for Q&A sites. For more information, visit:
