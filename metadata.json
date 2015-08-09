@@ -1,0 +1,13 @@
+{
+  "name": "Q2A Delete Hidden Posts",
+  "uri": "https://github.com/amiyasahu/q2a-delete-hidden-posts",
+  "description": "Provides a basic widget for displaying breadcrumbs",
+  "version": "1.5",
+  "date": "2015-07-06",
+  "author": "Amiya Sahu",
+  "author_uri": "http://www.amiyasahu.com/",
+  "license": "GPLv3",
+  "update_uri": "https://raw.githubusercontent.com/amiyasahu/q2a-breadcrumbs/master/qa-plugin.php",
+  "min_q2a": "1.6",
+  "min_php": "5.1.6"
+}
