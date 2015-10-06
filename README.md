@@ -41,3 +41,7 @@ Question2Answer is a free and open source platform for Q&A sites. For more infor
 
 http://www.question2answer.org/
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/amiyasahu/q2a-delete-hidden-posts/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
