@@ -12,11 +12,10 @@ Also if your website has many hidden posts which have many child posts this plug
 
 ## Features
 
-- ability to delete all the hidden posts from q2a database having dependencies 
-- when a question is deleted all its answers , comments gets deleted 
-- when a answer is deleted all its comments and related questions gets deleted 
-- buttons are displayed *after* a question's or answer's or comemnt's response buttons - which helps to delete the post right away 
-- every options can be configured from admin panel 
+- Ability to delete all the hidden posts from Question2Answer database having dependencies 
+- When a question is deleted all its Answers, Comments gets deleted 
+- When a answer is deleted all its Comments and Related Questions gets deleted 
+- Buttons are displayed *after* a Question's or Answer's or Comemnt's response buttons - which helps to delete the post with one click
 
 ## Version History
 
