@@ -16,7 +16,7 @@
         'delete_q'                  => 'Delete',
         'delete_a'                  => 'Delete',
         'delete_c'                  => 'delete',
-        'are_you_sure'              => 'Are you sure ?',
+        'are_you_sure'              => 'Are you sure?',
     );
 
     /*
